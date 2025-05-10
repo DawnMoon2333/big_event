@@ -1,0 +1,18 @@
+spring:
+  config:
+      import: classpath:application-secret.yml
+#       需要参考application-secret.yml.example，在application.yml所在目录下自行配置application-secret.yml
+  application:
+    name: big-event
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: true
+    # 开启下划线命名到驼峰命名的转换，保证可以返回数据库中的时间
+
+
+

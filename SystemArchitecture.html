@@ -1,0 +1,455 @@
+<!DOCTYPE html><html><head>
+      <title>SystemArchitecture</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\33615\.cursor\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\katex\katex.min.css">
+      
+      
+      <script type="text/javascript" src="file:///c:\Users\33615\.cursor\extensions\shd101wyy.markdown-preview-enhanced-0.8.18\crossnote\dependencies\mermaid\mermaid.min.js" charset="UTF-8"></script>
+      
+      
+      <style>
+      code[class*=language-],pre[class*=language-]{color:#333;background:0 0;font-family:Consolas,"Liberation Mono",Menlo,Courier,monospace;text-align:left;white-space:pre;word-spacing:normal;word-break:normal;word-wrap:normal;line-height:1.4;-moz-tab-size:8;-o-tab-size:8;tab-size:8;-webkit-hyphens:none;-moz-hyphens:none;-ms-hyphens:none;hyphens:none}pre[class*=language-]{padding:.8em;overflow:auto;border-radius:3px;background:#f5f5f5}:not(pre)>code[class*=language-]{padding:.1em;border-radius:.3em;white-space:normal;background:#f5f5f5}.token.blockquote,.token.comment{color:#969896}.token.cdata{color:#183691}.token.doctype,.token.macro.property,.token.punctuation,.token.variable{color:#333}.token.builtin,.token.important,.token.keyword,.token.operator,.token.rule{color:#a71d5d}.token.attr-value,.token.regex,.token.string,.token.url{color:#183691}.token.atrule,.token.boolean,.token.code,.token.command,.token.constant,.token.entity,.token.number,.token.property,.token.symbol{color:#0086b3}.token.prolog,.token.selector,.token.tag{color:#63a35c}.token.attr-name,.token.class,.token.class-name,.token.function,.token.id,.token.namespace,.token.pseudo-class,.token.pseudo-element,.token.url-reference .token.variable{color:#795da3}.token.entity{cursor:help}.token.title,.token.title .token.punctuation{font-weight:700;color:#1d3e81}.token.list{color:#ed6a43}.token.inserted{background-color:#eaffea;color:#55a532}.token.deleted{background-color:#ffecec;color:#bd2c00}.token.bold{font-weight:700}.token.italic{font-style:italic}.language-json .token.property{color:#183691}.language-markup .token.tag .token.punctuation{color:#333}.language-css .token.function,code.language-css{color:#0086b3}.language-yaml .token.atrule{color:#63a35c}code.language-yaml{color:#183691}.language-ruby .token.function{color:#333}.language-markdown .token.url{color:#795da3}.language-makefile .token.symbol{color:#795da3}.language-makefile .token.variable{color:#183691}.language-makefile .token.builtin{color:#0086b3}.language-bash .token.keyword{color:#0086b3}pre[data-line]{position:relative;padding:1em 0 1em 3em}pre[data-line] .line-highlight-wrapper{position:absolute;top:0;left:0;background-color:transparent;display:block;width:100%}pre[data-line] .line-highlight{position:absolute;left:0;right:0;padding:inherit 0;margin-top:1em;background:hsla(24,20%,50%,.08);background:linear-gradient(to right,hsla(24,20%,50%,.1) 70%,hsla(24,20%,50%,0));pointer-events:none;line-height:inherit;white-space:pre}pre[data-line] .line-highlight:before,pre[data-line] .line-highlight[data-end]:after{content:attr(data-start);position:absolute;top:.4em;left:.6em;min-width:1em;padding:0 .5em;background-color:hsla(24,20%,50%,.4);color:#f4f1ef;font:bold 65%/1.5 sans-serif;text-align:center;vertical-align:.3em;border-radius:999px;text-shadow:none;box-shadow:0 1px #fff}pre[data-line] .line-highlight[data-end]:after{content:attr(data-end);top:auto;bottom:.4em}html body{font-family:'Helvetica Neue',Helvetica,'Segoe UI',Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ol,html body>ul{margin-bottom:16px}html body ol,html body ul{padding-left:2em}html body ol.no-list,html body ul.no-list{padding:0;list-style-type:none}html body ol ol,html body ol ul,html body ul ol,html body ul ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:700;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:700}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::after,html body code::before{letter-spacing:-.2em;content:'\00a0'}html body pre>code{padding:0;margin:0;word-break:normal;white-space:pre;background:0 0;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:after,html body pre code:before,html body pre tt:after,html body pre tt:before{content:normal}html body blockquote,html body dl,html body ol,html body p,html body pre,html body ul{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body code,html body pre{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview ul{list-style:disc}.markdown-preview ul ul{list-style:circle}.markdown-preview ul ul ul{list-style:square}.markdown-preview ol{list-style:decimal}.markdown-preview ol ol,.markdown-preview ul ol{list-style-type:lower-roman}.markdown-preview ol ol ol,.markdown-preview ol ul ol,.markdown-preview ul ol ol,.markdown-preview ul ul ol{list-style-type:lower-alpha}.markdown-preview .newpage,.markdown-preview .pagebreak{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center!important}.markdown-preview:not([data-for=preview]) .code-chunk .code-chunk-btn-group{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .status{display:none}.markdown-preview:not([data-for=preview]) .code-chunk .output-div{margin-bottom:16px}.markdown-preview .md-toc{padding:0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link div,.markdown-preview .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}.markdown-preview .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0;min-height:100vh}@media screen and (min-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode]) .markdown-preview{font-size:14px!important;padding:1em}}@media print{html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for=html-export]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,.66);border:4px solid rgba(150,150,150,.66);background-clip:content-box}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc{padding:0 16px}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link{display:inline;padding:.25rem 0}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link div,html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper .md-toc-link p{display:inline}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc .md-toc .md-toc-link-wrapper.highlighted .md-toc-link{font-weight:800}html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% - 300px);padding:2em calc(50% - 457px - 300px / 2);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for=html-export]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for=html-export]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+      <!-- The content below will be included at the end of the <head> element. --><script type="text/javascript">
+  document.addEventListener("DOMContentLoaded", function () {
+    // your code here
+  });
+</script></head><body for="html-export">
+    
+    
+      <div class="crossnote markdown-preview  ">
+      
+<h2 id="系统架构">系统架构 </h2>
+<div class="mermaid">flowchart TD
+    subgraph Client[客户端层]
+        Web[Web前端]
+        Mobile[移动端]
+    end
+    
+    subgraph API[API层]
+        direction TB
+        WebConfig[Web配置]
+        LoginInterceptor[登录拦截器]
+        Controllers[控制器层]
+    end
+    
+    subgraph Service[服务层]
+        UserService[用户服务]
+        ArticleService[文章服务]
+        CategoryService[分类服务]
+        UploadService[上传服务]
+    end
+    
+    subgraph Persistence[持久层]
+        Mappers[MyBatis Mapper]
+        DB[(MySQL数据库)]
+    end
+    
+    subgraph Utils[工具类]
+        JWTUtil[JWT工具]
+        ThreadLocalUtil[线程本地存储]
+        PasswordUtil[密码工具]
+        ValidationUtil[验证工具]
+        ObjectStorageUtil[对象存储工具]
+    end
+    
+    Client --&gt; API
+    API --&gt; Service
+    Service --&gt; Persistence
+    Service --&gt; Utils
+    API --&gt; Utils
+    Mappers --&gt; DB
+</div><h2 id="项目流程图">项目流程图 </h2>
+<div class="mermaid">flowchart TD
+    Client((客户端)) --&gt; |HTTP请求| LoginInterceptor[登录拦截器]
+    
+    LoginInterceptor --&gt; |Token验证| JWTUtil[JWT工具]
+    JWTUtil --&gt; |Token有效| ThreadLocalUtil[线程本地存储]
+    ThreadLocalUtil --&gt; Controllers
+    
+    subgraph Controllers
+        UserController[用户控制器]
+        ArticleController[文章控制器]
+        CategoryController[分类控制器]
+        UploadController[上传控制器]
+    end
+    
+    Controllers --&gt; |业务逻辑处理| Services
+    
+    subgraph Services
+        UserService[用户服务]
+        ArticleService[文章服务]
+        CategoryService[分类服务] 
+        UploadService[上传服务]
+    end
+    
+    Services --&gt; |数据访问| Mappers
+    
+    subgraph Mappers
+        UserMapper[用户Mapper]
+        ArticleMapper[文章Mapper]
+        CategoryMapper[分类Mapper]
+        UploadMapper[上传Mapper]
+    end
+    
+    Mappers --&gt; |SQL操作| Database[(数据库)]
+    
+    subgraph Utils
+        JWTUtil[JWT工具]
+        ThreadLocalUtil[线程本地存储]
+        PasswordUtil[密码工具]
+        ValidationUtil[验证工具]
+        DatabaseUtil[数据库工具]
+        ObjectStorageUtil[对象存储工具]
+    end
+    
+    Services --&gt; Utils
+    Controllers --&gt; Utils
+</div><h2 id="用户登录流程图">用户登录流程图 </h2>
+<div class="mermaid">flowchart TD
+    Client((客户端)) --&gt; |POST /user/login| UserController
+    UserController --&gt; |验证用户名和密码| UserService
+    UserService --&gt; |查询用户| UserMapper
+    UserMapper --&gt; |返回用户数据| Database[(数据库)]
+    Database --&gt; |用户数据| UserService
+    UserService --&gt; |验证密码| PasswordUtil[密码工具]
+    PasswordUtil --&gt; |密码验证结果| UserService
+    UserService --&gt; |生成Token| JWTUtil[JWT工具]
+    JWTUtil --&gt; |返回Token| UserController
+    UserController --&gt; |返回登录结果| Client
+</div><h2 id="请求拦截流程图">请求拦截流程图 </h2>
+<div class="mermaid">flowchart TD
+    Client((客户端)) --&gt;|HTTP请求| WebConfig[Web配置]
+    WebConfig --&gt;|拦截请求| LoginInterceptor[登录拦截器]
+    LoginInterceptor --&gt;|检查Token| JWTUtil[JWT工具]
+    
+    JWTUtil --&gt;|Token有效| ValidToken{Token有效?}
+    ValidToken --&gt;|是| ThreadLocalUtil[线程本地存储]
+    ThreadLocalUtil --&gt;|保存用户信息| Controller[控制器]
+    
+    ValidToken --&gt;|否| Error[返回401错误]
+    Error --&gt; Client
+    
+    Controller --&gt;|处理请求| Service[服务层]
+    Service --&gt;|数据操作| Mapper[Mapper层]
+    Mapper --&gt;|SQL操作| Database[(数据库)]
+    
+    Database --&gt;|返回数据| Mapper
+    Mapper --&gt;|返回结果| Service
+    Service --&gt;|处理结果| Controller
+    Controller --&gt;|响应结果| Client
+    
+    Controller --&gt;|请求完成| LoginInterceptor
+    LoginInterceptor --&gt;|清理ThreadLocal| ThreadLocalUtil
+</div><h2 id="时序图">时序图 </h2>
+<h3 id="文章管理">文章管理 </h3>
+<div class="mermaid">sequenceDiagram
+    participant Client as 客户端
+    participant Interceptor as 登录拦截器
+    participant ArticleController as 文章控制器
+    participant ArticleService as 文章服务
+    participant ArticleMapper as 文章Mapper
+    participant DB as 数据库
+    
+    Client-&gt;&gt;Interceptor: 发送请求(带Token)
+    Interceptor-&gt;&gt;Interceptor: 验证Token并保存用户信息
+    
+    alt 新增文章
+        Client-&gt;&gt;ArticleController: POST /article (文章数据)
+        ArticleController-&gt;&gt;ArticleService: add(article)
+        ArticleService-&gt;&gt;ArticleMapper: insert(article)
+        ArticleMapper-&gt;&gt;DB: 插入数据
+        DB--&gt;&gt;ArticleMapper: 插入成功
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回结果
+        ArticleController--&gt;&gt;Client: 返回成功响应
+    
+    else 获取文章列表
+        Client-&gt;&gt;ArticleController: GET /article (分页参数)
+        ArticleController-&gt;&gt;ArticleService: list(pageNum, pageSize, categoryId, state)
+        ArticleService-&gt;&gt;ArticleMapper: selectByCondition(...)
+        ArticleMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;ArticleMapper: 返回文章列表
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回分页结果
+        ArticleController--&gt;&gt;Client: 返回文章列表
+    
+    else 获取文章详情
+        Client-&gt;&gt;ArticleController: GET /article/detail?id=xx
+        ArticleController-&gt;&gt;ArticleService: detail(id)
+        ArticleService-&gt;&gt;ArticleMapper: selectById(id)
+        ArticleMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;ArticleMapper: 返回文章数据
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回文章对象
+        ArticleController--&gt;&gt;Client: 返回文章详情
+    
+    else 更新文章
+        Client-&gt;&gt;ArticleController: PATCH /article (文章数据)
+        ArticleController-&gt;&gt;ArticleService: detail(id)
+        ArticleService-&gt;&gt;ArticleMapper: selectById(id)
+        ArticleMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;ArticleMapper: 返回文章数据
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回文章对象
+        ArticleController-&gt;&gt;ArticleController: 检查用户权限
+        ArticleController-&gt;&gt;ArticleService: update(article)
+        ArticleService-&gt;&gt;ArticleMapper: update(article)
+        ArticleMapper-&gt;&gt;DB: 更新数据
+        DB--&gt;&gt;ArticleMapper: 更新成功
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回结果
+        ArticleController--&gt;&gt;Client: 返回成功响应
+    
+    else 删除文章
+        Client-&gt;&gt;ArticleController: DELETE /article?id=xx
+        ArticleController-&gt;&gt;ArticleService: detail(id)
+        ArticleService-&gt;&gt;ArticleMapper: selectById(id)
+        ArticleMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;ArticleMapper: 返回文章数据
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回文章对象
+        ArticleController-&gt;&gt;ArticleController: 检查用户权限
+        ArticleController-&gt;&gt;ArticleService: delete(id)
+        ArticleService-&gt;&gt;ArticleMapper: deleteById(id)
+        ArticleMapper-&gt;&gt;DB: 删除数据
+        DB--&gt;&gt;ArticleMapper: 删除成功
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回结果
+        ArticleController--&gt;&gt;Client: 返回成功响应
+    end
+</div><h3 id="用户管理">用户管理 </h3>
+<div class="mermaid">sequenceDiagram
+    participant Client as 客户端
+    participant UserController as 用户控制器
+    participant UserService as 用户服务
+    participant UserMapper as 用户Mapper
+    participant Utils as 工具类
+    participant DB as 数据库
+    
+    alt 用户注册
+        Client-&gt;&gt;UserController: POST /user/register
+        UserController-&gt;&gt;Utils: validationUtil.register()
+        Utils--&gt;&gt;UserController: 验证结果
+        UserController-&gt;&gt;UserService: register(username, password, nickname)
+        UserService-&gt;&gt;Utils: passwordUtil.SHA256Encrypt(password)
+        Utils--&gt;&gt;UserService: 加密后的密码
+        UserService-&gt;&gt;UserMapper: register(username, encryptedPassword, nickname)
+        UserMapper-&gt;&gt;DB: 插入用户数据
+        DB--&gt;&gt;UserMapper: 插入成功
+        UserMapper--&gt;&gt;UserService: 返回结果
+        UserService--&gt;&gt;UserController: 返回结果
+        UserController--&gt;&gt;Client: 返回成功响应
+    
+    else 用户登录
+        Client-&gt;&gt;UserController: POST /user/login
+        UserController-&gt;&gt;UserService: findByUsername(username)
+        UserService-&gt;&gt;UserMapper: findByName(username)
+        UserMapper-&gt;&gt;DB: 查询用户
+        DB--&gt;&gt;UserMapper: 返回用户数据
+        UserMapper--&gt;&gt;UserService: 返回用户
+        UserService--&gt;&gt;UserController: 返回用户
+        UserController-&gt;&gt;Utils: passwordUtil.SHA256Encrypt(password)
+        Utils--&gt;&gt;UserController: 加密后的密码
+        UserController-&gt;&gt;UserController: 比较密码
+        UserController-&gt;&gt;Utils: jwtHelper.genToken(claims)
+        Utils--&gt;&gt;UserController: JWT令牌
+        UserController--&gt;&gt;Client: 返回Token
+    
+    else 获取用户信息
+        Client-&gt;&gt;UserController: GET /user/getInfo
+        UserController-&gt;&gt;Utils: ThreadLocalUtil.get()
+        Utils--&gt;&gt;UserController: 当前用户信息
+        UserController-&gt;&gt;UserService: findByUsername(username)
+        UserService-&gt;&gt;UserMapper: findByName(username)
+        UserMapper-&gt;&gt;DB: 查询用户
+        DB--&gt;&gt;UserMapper: 返回用户数据
+        UserMapper--&gt;&gt;UserService: 返回用户
+        UserService--&gt;&gt;UserController: 返回用户
+        UserController--&gt;&gt;Client: 返回用户信息
+    
+    else 更新基本信息
+        Client-&gt;&gt;UserController: PUT /user/updateBasic
+        UserController-&gt;&gt;Utils: ThreadLocalUtil.get()
+        Utils--&gt;&gt;UserController: 当前用户信息
+        UserController-&gt;&gt;UserController: 验证ID一致性
+        UserController-&gt;&gt;Utils: validationUtil.updateBasic()
+        Utils--&gt;&gt;UserController: 验证结果
+        UserController-&gt;&gt;UserService: updateBasic(user)
+        UserService-&gt;&gt;UserMapper: updateBasic(user)
+        UserMapper-&gt;&gt;DB: 更新用户数据
+        DB--&gt;&gt;UserMapper: 更新成功
+        UserMapper--&gt;&gt;UserService: 返回结果
+        UserService--&gt;&gt;UserController: 返回结果
+        UserController--&gt;&gt;Client: 返回成功响应
+    
+    else 更新头像
+        Client-&gt;&gt;UserController: PATCH /user/updatePic
+        UserController-&gt;&gt;UserService: updatePic(picUrl)
+        UserService-&gt;&gt;Utils: ThreadLocalUtil.get()
+        Utils--&gt;&gt;UserService: 当前用户信息
+        UserService-&gt;&gt;UserMapper: updatePic(id, picUrl)
+        UserMapper-&gt;&gt;DB: 更新头像
+        DB--&gt;&gt;UserMapper: 更新成功
+        UserMapper--&gt;&gt;UserService: 返回结果
+        UserService--&gt;&gt;UserController: 返回结果
+        UserController--&gt;&gt;Client: 返回成功响应
+    
+    else 更新密码
+        Client-&gt;&gt;UserController: PATCH /user/updatePwd
+        UserController-&gt;&gt;UserController: 验证参数
+        UserController-&gt;&gt;Utils: ThreadLocalUtil.get()
+        Utils--&gt;&gt;UserController: 当前用户信息
+        UserController-&gt;&gt;UserService: findByUsername(username)
+        UserService-&gt;&gt;UserMapper: findByName(username)
+        UserMapper-&gt;&gt;DB: 查询用户
+        DB--&gt;&gt;UserMapper: 返回用户数据
+        UserMapper--&gt;&gt;UserService: 返回用户
+        UserService--&gt;&gt;UserController: 返回用户
+        UserController-&gt;&gt;Utils: passwordUtil.SHA256Encrypt(oldPwd)
+        Utils--&gt;&gt;UserController: 加密旧密码
+        UserController-&gt;&gt;UserController: 验证密码匹配
+        UserController-&gt;&gt;Utils: validationUtil.passwordValid(newPwd)
+        Utils--&gt;&gt;UserController: 验证结果
+        UserController-&gt;&gt;UserService: updatePwd(newPwd)
+        UserService-&gt;&gt;Utils: ThreadLocalUtil.get()
+        Utils--&gt;&gt;UserService: 当前用户信息
+        UserService-&gt;&gt;Utils: passwordUtil.SHA256Encrypt(newPwd)
+        Utils--&gt;&gt;UserService: 加密新密码
+        UserService-&gt;&gt;UserMapper: updatePwd(id, encryptedPwd)
+        UserMapper-&gt;&gt;DB: 更新密码
+        DB--&gt;&gt;UserMapper: 更新成功
+        UserMapper--&gt;&gt;UserService: 返回结果
+        UserService--&gt;&gt;UserController: 返回结果
+        UserController--&gt;&gt;Client: 返回成功响应
+    end
+</div><h3 id="分类管理">分类管理 </h3>
+<div class="mermaid">sequenceDiagram
+    participant Client as 客户端
+    participant Interceptor as 登录拦截器
+    participant CategoryController as 分类控制器
+    participant CategoryService as 分类服务
+    participant CategoryMapper as 分类Mapper
+    participant DB as 数据库
+    
+    Client-&gt;&gt;Interceptor: 发送请求(带Token)
+    Interceptor-&gt;&gt;Interceptor: 验证Token并保存用户信息
+    
+    alt 新增分类
+        Client-&gt;&gt;CategoryController: POST /category (分类数据)
+        CategoryController-&gt;&gt;CategoryService: add(category)
+        CategoryService-&gt;&gt;CategoryMapper: insert(category)
+        CategoryMapper-&gt;&gt;DB: 插入数据
+        DB--&gt;&gt;CategoryMapper: 插入成功
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回结果
+        CategoryController--&gt;&gt;Client: 返回成功响应
+    
+    else 获取分类列表
+        Client-&gt;&gt;CategoryController: GET /category
+        CategoryController-&gt;&gt;CategoryService: list()
+        CategoryService-&gt;&gt;CategoryMapper: selectAll()
+        CategoryMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;CategoryMapper: 返回分类列表
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回分类列表
+        CategoryController--&gt;&gt;Client: 返回分类列表
+    
+    else 获取分类详情
+        Client-&gt;&gt;CategoryController: GET /category/detail?id=xx
+        CategoryController-&gt;&gt;CategoryService: detail(id)
+        CategoryService-&gt;&gt;CategoryMapper: selectById(id)
+        CategoryMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;CategoryMapper: 返回分类数据
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回分类对象
+        CategoryController-&gt;&gt;CategoryController: 检查用户权限
+        CategoryController--&gt;&gt;Client: 返回分类详情
+    
+    else 更新分类
+        Client-&gt;&gt;CategoryController: PUT /category (分类数据)
+        CategoryController-&gt;&gt;CategoryService: detail(id)
+        CategoryService-&gt;&gt;CategoryMapper: selectById(id)
+        CategoryMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;CategoryMapper: 返回分类数据
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回分类对象
+        CategoryController-&gt;&gt;CategoryController: 检查用户权限
+        CategoryController-&gt;&gt;CategoryService: update(category)
+        CategoryService-&gt;&gt;CategoryMapper: update(category)
+        CategoryMapper-&gt;&gt;DB: 更新数据
+        DB--&gt;&gt;CategoryMapper: 更新成功
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回结果
+        CategoryController--&gt;&gt;Client: 返回成功响应
+    
+    else 删除分类
+        Client-&gt;&gt;CategoryController: DELETE /category?id=xx
+        CategoryController-&gt;&gt;CategoryService: detail(id)
+        CategoryService-&gt;&gt;CategoryMapper: selectById(id)
+        CategoryMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;CategoryMapper: 返回分类数据
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回分类对象
+        CategoryController-&gt;&gt;CategoryController: 检查用户权限
+        CategoryController-&gt;&gt;CategoryService: delete(id)
+        CategoryService-&gt;&gt;CategoryMapper: deleteById(id)
+        CategoryMapper-&gt;&gt;DB: 删除数据
+        DB--&gt;&gt;CategoryMapper: 删除成功
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回结果
+        CategoryController--&gt;&gt;Client: 返回成功响应
+    end
+</div>
+      </div>
+      
+      
+    
+    
+    <script type="module">
+// TODO: If ZenUML gets integrated into mermaid in the future,
+//      we can remove the following lines.
+
+
+var MERMAID_CONFIG = ({"startOnLoad":false});
+if (typeof MERMAID_CONFIG !== 'undefined') {
+  MERMAID_CONFIG.startOnLoad = false
+  MERMAID_CONFIG.cloneCssStyles = false
+  MERMAID_CONFIG.theme = "default"
+}
+
+mermaid.initialize(MERMAID_CONFIG || {})
+if (typeof(window['Reveal']) !== 'undefined') {
+  function mermaidRevealHelper(event) {
+    var currentSlide = event.currentSlide
+    var diagrams = currentSlide.querySelectorAll('.mermaid')
+    for (var i = 0; i < diagrams.length; i++) {
+      var diagram = diagrams[i]
+      if (!diagram.hasAttribute('data-processed')) {
+        mermaid.init(null, diagram, ()=> {
+          Reveal.slide(event.indexh, event.indexv)
+        })
+      }
+    }
+  }
+  Reveal.addEventListener('slidetransitionend', mermaidRevealHelper)
+  Reveal.addEventListener('ready', mermaidRevealHelper)
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+} else {
+  await mermaid.run({
+    nodes: document.querySelectorAll('.mermaid')
+  })
+}
+</script>
+    
+    
+    
+  
+    </body></html>

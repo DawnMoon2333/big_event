@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dawnmoon.big_event.mapper.ArticleMapper">
+<!--    动态sql-->
+    <select id="list" resultType="com.dawnmoon.big_event.pojo.Article">
+        select * from big_event.article
+        <where>
+            <if test="categoryId!=null">
+                category_id=#{categoryId}
+            </if>
+            <if test="state!=null">
+                and state=#{state}
+            </if>
+            and create_user=#{id}
+        </where>
+    </select>
+
+    <update id="update">
+        update big_event.article
+        <set>
+            <if test="categoryId != null">
+                category_id=#{categoryId},
+            </if>
+            <if test="title != null">
+                title=#{title},
+            </if>
+            <if test="content != null">
+                content=#{content},
+            </if>
+            <if test="coverPicUrl != null">
+                cover_pic_url=#{coverPicUrl},
+            </if>
+            <if test="state != null">
+                state=#{state},
+            </if>
+            update_time=#{updateTime}
+        </set>
+        where id=#{id}
+    </update>
+</mapper>
