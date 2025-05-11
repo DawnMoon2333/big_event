@@ -23,4 +23,7 @@ public interface ArticleMapper {
 
     @Delete("delete from big_event.article where id=#{id}")
     void delete(Integer id);
+    
+    @Select("select count(*) from big_event.article where create_user=#{userId}")
+    Integer count(Integer userId);
 }

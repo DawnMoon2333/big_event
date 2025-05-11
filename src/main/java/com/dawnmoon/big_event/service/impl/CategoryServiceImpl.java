@@ -53,4 +53,10 @@ public class CategoryServiceImpl implements CategoryService {
     public void delete(Integer id) {
         categoryMapper.delete(id);
     }
+
+    @Override
+    public Integer count() {
+        Integer userId = jwtUtil.getCurUserId();
+        return categoryMapper.count(userId);
+    }
 }

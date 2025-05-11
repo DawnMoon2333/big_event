@@ -215,6 +215,16 @@ sequenceDiagram
         ArticleMapper-->>ArticleService: 返回结果
         ArticleService-->>ArticleController: 返回结果
         ArticleController-->>Client: 返回成功响应
+        
+    else 获取文章总数
+        Client->>ArticleController: GET /article/count
+        ArticleController->>ArticleService: count()
+        ArticleService->>ArticleMapper: count(userId)
+        ArticleMapper->>DB: 查询数据
+        DB-->>ArticleMapper: 返回文章总数
+        ArticleMapper-->>ArticleService: 返回结果
+        ArticleService-->>ArticleController: 返回文章总数
+        ArticleController-->>Client: 返回成功响应
     end
 ```
 
@@ -404,6 +414,16 @@ sequenceDiagram
         DB-->>CategoryMapper: 删除成功
         CategoryMapper-->>CategoryService: 返回结果
         CategoryService-->>CategoryController: 返回结果
+        CategoryController-->>Client: 返回成功响应
+        
+    else 获取分类总数
+        Client->>CategoryController: GET /category/count
+        CategoryController->>CategoryService: count()
+        CategoryService->>CategoryMapper: count(userId)
+        CategoryMapper->>DB: 查询数据
+        DB-->>CategoryMapper: 返回分类总数
+        CategoryMapper-->>CategoryService: 返回结果
+        CategoryService-->>CategoryController: 返回分类总数
         CategoryController-->>Client: 返回成功响应
     end
 ```

@@ -72,9 +72,11 @@ public class CategoryController {
 
         categoryService.delete(id);
         return Response.success("删除文章分类详情成功", id.toString());
-
-
     }
-
-
+    
+    @GetMapping("/count")
+    public Response<Integer> count(){
+        Integer count = categoryService.count();
+        return Response.success("获取文章分类总数成功", count);
+    }
 }

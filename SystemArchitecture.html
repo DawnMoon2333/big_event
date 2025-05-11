@@ -222,6 +222,16 @@
         ArticleMapper--&gt;&gt;ArticleService: 返回结果
         ArticleService--&gt;&gt;ArticleController: 返回结果
         ArticleController--&gt;&gt;Client: 返回成功响应
+        
+    else 获取文章总数
+        Client-&gt;&gt;ArticleController: GET /article/count
+        ArticleController-&gt;&gt;ArticleService: count()
+        ArticleService-&gt;&gt;ArticleMapper: count(userId)
+        ArticleMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;ArticleMapper: 返回文章总数
+        ArticleMapper--&gt;&gt;ArticleService: 返回结果
+        ArticleService--&gt;&gt;ArticleController: 返回文章总数
+        ArticleController--&gt;&gt;Client: 返回成功响应
     end
 </div><h3 id="用户管理">用户管理 </h3>
 <div class="mermaid">sequenceDiagram
@@ -403,6 +413,16 @@
         DB--&gt;&gt;CategoryMapper: 删除成功
         CategoryMapper--&gt;&gt;CategoryService: 返回结果
         CategoryService--&gt;&gt;CategoryController: 返回结果
+        CategoryController--&gt;&gt;Client: 返回成功响应
+        
+    else 获取分类总数
+        Client-&gt;&gt;CategoryController: GET /category/count
+        CategoryController-&gt;&gt;CategoryService: count()
+        CategoryService-&gt;&gt;CategoryMapper: count(userId)
+        CategoryMapper-&gt;&gt;DB: 查询数据
+        DB--&gt;&gt;CategoryMapper: 返回分类总数
+        CategoryMapper--&gt;&gt;CategoryService: 返回结果
+        CategoryService--&gt;&gt;CategoryController: 返回分类总数
         CategoryController--&gt;&gt;Client: 返回成功响应
     end
 </div>

@@ -1064,6 +1064,61 @@
     "message": "删除文章分类详情成功",
     "data": 6
 }
+</code></pre><h3 id="26-获取文章分类总数">2.6 获取文章分类总数 </h3>
+<p>用于获取当前用户创建的文章分类总数</p>
+<p>请求路径：<code>/category/count</code><br>
+请求方式：<code>GET</code><br>
+请求头：</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>必选</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td>是</td>
+<td>jwt令牌</td>
+</tr>
+</tbody>
+</table>
+<p>请求参数：无</p>
+<p>响应数据类型：<code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>number</td>
+<td>0-成功，1-失败</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>详细信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>number</td>
+<td>文章分类总数</td>
+</tr>
+</tbody>
+</table>
+<p>响应体示例：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>{
+    "code": 0,
+    "message": "获取文章分类总数成功",
+    "data": 2
+}
 </code></pre><h2 id="3-文章">3、文章 </h2>
 <h3 id="31-新增文章">3.1 新增文章 </h3>
 <p>用于新增一篇文章</p>
@@ -1663,6 +1718,61 @@
     "code": 0,
     "message": "删除文章成功",
     "data": null
+}
+</code></pre><h3 id="36-获取文章总数">3.6 获取文章总数 </h3>
+<p>用于获取当前用户发布的文章总数</p>
+<p>请求路径：<code>/article/count</code><br>
+请求方式：<code>GET</code><br>
+请求头：</p>
+<table>
+<thead>
+<tr>
+<th>Header</th>
+<th>必选</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Authorization</code></td>
+<td>是</td>
+<td>jwt令牌</td>
+</tr>
+</tbody>
+</table>
+<p>请求参数：无</p>
+<p>响应数据类型：<code>application/json</code></p>
+<table>
+<thead>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>code</td>
+<td>number</td>
+<td>0-成功，1-失败</td>
+</tr>
+<tr>
+<td>message</td>
+<td>string</td>
+<td>详细信息</td>
+</tr>
+<tr>
+<td>data</td>
+<td>number</td>
+<td>文章总数</td>
+</tr>
+</tbody>
+</table>
+<p>响应体示例：</p>
+<pre data-role="codeBlock" data-info="" class="language-text"><code>{
+    "code": 0,
+    "message": "获取文章总数成功",
+    "data": 3
 }
 </code></pre><h2 id="4-文件上传">4、文件上传 </h2>
 <h3 id="41-单文件上传">4.1 单文件上传 </h3>

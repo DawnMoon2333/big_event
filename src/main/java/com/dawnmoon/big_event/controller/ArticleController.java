@@ -83,4 +83,10 @@ public class ArticleController {
         return Response.success("删除文章成功");
 
     }
+
+    @GetMapping("/count")
+    public Response<Integer> count() {
+        Integer count = articleService.count();
+        return Response.success("获取文章总数成功", count);
+    }
 }

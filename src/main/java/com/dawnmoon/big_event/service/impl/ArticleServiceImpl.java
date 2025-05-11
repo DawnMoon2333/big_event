@@ -72,4 +72,10 @@ public class ArticleServiceImpl implements ArticleService {
     public void delete(Integer id) {
         articleMapper.delete(id);
     }
+    
+    @Override
+    public Integer count() {
+        Integer userId = jwtUtil.getCurUserId();
+        return articleMapper.count(userId);
+    }
 }

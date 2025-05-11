@@ -13,4 +13,6 @@ public interface ArticleService {
     void update(Article article);
 
     void delete(Integer id);
+    
+    Integer count();
 }

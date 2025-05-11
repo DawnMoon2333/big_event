@@ -23,4 +23,7 @@ public interface CategoryMapper {
 
     @Delete("delete from big_event.category where id=#{id}")
     void delete(Integer id);
+
+    @Select("select count(*) from big_event.category where create_user=#{userId}")
+    Integer count(Integer userId);
 }
