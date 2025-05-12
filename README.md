@@ -60,7 +60,7 @@
 - 密码加密盐值
 - 华为云对象存储配置
 
-不需要手动建立数据库和表，程序会使用 `InitDB.sql` 自动创建。
+不需要手动建立数据库和表，程序会使用[InitDB.sql](./src/main/resources/InitDB.sql) 自动创建。
 
 ## API文档
 
