@@ -71,4 +71,4 @@
 - 文章管理接口
 - 文件上传接口
 
-详细API文档参考项目中的 [SystemArchitecture.md](./SystemArchitecture.md)。
+详细API文档参考[InterfaceDocumentation.md](./InterfaceDocumentation.md) 和 [SystemArchitecture.md](./SystemArchitecture.md)。
