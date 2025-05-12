@@ -19,6 +19,8 @@ public class ObjectStorageUtil {
     private String sk;
     @Value("${huaweistorage.endpoint}")
     private String endPoint;
+    @Value("${huaweistorage.access-domain}")
+    private String accessDomain;
 
     public String  upload(MultipartFile file, String filename) throws IOException {
 
@@ -33,7 +35,7 @@ public class ObjectStorageUtil {
             request.setFile(multipartToFile(file));
             PutObjectResult result = obsClient.putObject(request);
             //System.out.println("putObject successfully");
-            return "big-event-dawnmoon.obs.cn-southwest-2.myhuaweicloud.com/"+result.getObjectKey();
+            return "https://"+accessDomain+result.getObjectKey();
         } catch (ObsException e) {
             System.out.println("putObject failed");
             // 请求失败,打印http状态码

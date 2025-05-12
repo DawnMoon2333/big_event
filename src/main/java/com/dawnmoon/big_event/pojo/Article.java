@@ -18,7 +18,6 @@ public class Article {
     @Pattern(regexp = "^.{1,64}$") // 任意1-64个字符
     private String title;
     private String content;
-    @URL
     private String coverPicUrl;
     @Min(0)
     @Max(1) // 只能取0或1
