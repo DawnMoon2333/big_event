@@ -1,3 +1,9 @@
+# 项目配置优先级：
+# resources/application.yml
+# jar包所在目录application.yml
+# 环境变量
+# 命令行参数
+
 spring:
   config:
       import: classpath:application-secret.yml
