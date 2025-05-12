@@ -282,7 +282,7 @@ picUrl=https://xxx.xxx.xxx/xx/xxxxxx.png
 
 请求数据示例：
 
-```
+```json
 {
   "oldPwd": "123123",
   "newPwd": "123123",
@@ -357,7 +357,7 @@ picUrl=https://xxx.xxx.xxx/xx/xxxxxx.png
 
 请求数据示例：
 
-```
+```json
 {
   "categoryName": "测试分类",
   "categoryAlias": "test"
@@ -375,7 +375,7 @@ picUrl=https://xxx.xxx.xxx/xx/xxxxxx.png
 
 响应体示例：
 
-```
+```json
 {
   "code": 0,
   "message": "新增文章分类成功",
@@ -411,7 +411,7 @@ picUrl=https://xxx.xxx.xxx/xx/xxxxxx.png
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "获取文章分类列表成功",
@@ -480,7 +480,7 @@ id=6
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "获取文章分类详情成功",
@@ -517,7 +517,7 @@ id=6
 
 请求数据示例：
 
-```
+```json
 {
     "id": 2,
     "categoryName": "测试2",
@@ -536,7 +536,7 @@ id=6
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "更新文章分类详情成功",
@@ -581,7 +581,7 @@ id=6
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "删除文章分类详情成功",
@@ -614,7 +614,7 @@ id=6
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "获取文章分类总数成功",
@@ -648,7 +648,7 @@ id=6
 
 请求数据示例：
 
-```
+```json
 {
     "title": "测试标题",
     "categoryId": 2,
@@ -669,7 +669,7 @@ id=6
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "新增文章成功",
@@ -729,7 +729,7 @@ pageNum=2&pageSize=5&categoryId=1&state=1
 
 响应体示例（pageNum=3&pageSize=2）：
 
-```
+```json
 {
     "code": 0,
     "message": "成功获取文章列表",
@@ -807,7 +807,7 @@ id=2
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "成功获取文章详情",
@@ -858,7 +858,7 @@ id=2
 
 请求数据示例：
 
-```
+```json
 {
     "id": 3,
     "categoryId": 3,
@@ -877,7 +877,7 @@ id=2
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "更新文章成功",
@@ -920,7 +920,7 @@ id=3
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "删除文章成功",
@@ -953,7 +953,7 @@ id=3
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "获取文章总数成功",
@@ -993,7 +993,7 @@ id=3
 
 响应体示例：
 
-```
+```json
 {
     "code": 0,
     "message": "上传文件成功",

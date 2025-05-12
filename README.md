@@ -60,7 +60,7 @@
 - 密码加密盐值
 - 华为云对象存储配置
 
-不需要手动建立数据库和表，程序会使用[InitDB.sql](./src/main/resources/InitDB.sql) 自动创建。
+不需要手动建立数据库和表，程序会使用 [InitDB.sql](./src/main/resources/InitDB.sql)  自动创建。
 
 ## API文档
 
@@ -71,4 +71,4 @@
 - 文章管理接口
 - 文件上传接口
 
-详细API文档参考[InterfaceDocumentation.md](./InterfaceDocumentation.md) 和 [SystemArchitecture.md](./SystemArchitecture.md)。
+详细API文档参考 [InterfaceDocumentation.md](./InterfaceDocumentation.md) 和 [SystemArchitecture.md](./SystemArchitecture.md)。
