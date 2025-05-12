@@ -14,5 +14,9 @@ mybatis:
     map-underscore-to-camel-case: true
     # 开启下划线命名到驼峰命名的转换，保证可以返回数据库中的时间
 
+jwt:
+  expirationTime: 15
+  # jwt令牌过期时间，单位分钟，作用于生成的jwt令牌过期时间和redis过期时间
+
 
 

@@ -9,28 +9,36 @@ import com.dawnmoon.big_event.utils.ThreadLocalUtil;
 import com.dawnmoon.big_event.utils.ValidationUtil;
 import org.hibernate.validator.constraints.URL;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/user")
 public class UserController {
 
+    @Value("${jwt.expirationTime}")
+    Integer expirationTime;
+
     private final UserService userService;
     private final ValidationUtil validationUtil;
     private final PasswordUtil passwordUtil;
     private final JWTUtil jwtHelper;
+    private final StringRedisTemplate stringRedisTemplate;
 
     // 构造器注入
     @Autowired
-    public UserController(UserService userService, ValidationUtil validationUtil, PasswordUtil passwordUtil, JWTUtil jwtUtil) {
+    public UserController(UserService userService, ValidationUtil validationUtil, PasswordUtil passwordUtil, JWTUtil jwtUtil, StringRedisTemplate stringRedisTemplate) {
         this.userService = userService;
         this.validationUtil = validationUtil;
         this.passwordUtil = passwordUtil;
         this.jwtHelper = jwtUtil;
+        this.stringRedisTemplate = stringRedisTemplate;
     }
 
     @PostMapping("/register")
@@ -70,8 +78,12 @@ public class UserController {
             Map<String, Object> claims = new HashMap<>();
             claims.put("id", user.getId());
             claims.put("username", user.getUsername());
+            var jwt = jwtHelper.genToken(claims);
 
-            return Response.success("登陆成功", jwtHelper.genToken(claims));
+            // 向redis存入数据
+            var redisOperations = stringRedisTemplate.opsForValue();
+            redisOperations.set(jwt, jwt, expirationTime, TimeUnit.MINUTES); // 有效期15分钟
+            return Response.success("登陆成功", jwt);
         }
     }
 
@@ -113,7 +125,7 @@ public class UserController {
     }
 
     @PatchMapping("/updatePwd")
-    public Response<?> updatePwd(@RequestBody Map<String, String> param){
+    public Response<?> updatePwd(@RequestBody Map<String, String> param, @RequestParam("Authorization") String token){
         String oldPwd = param.get("oldPwd");
         String newPwd = param.get("newPwd");
         String rePwd = param.get("rePwd");
@@ -143,6 +155,8 @@ public class UserController {
         }
 
         userService.updatePwd(newPwd);
+        // 删除redis token
+        stringRedisTemplate.opsForValue().getOperations().delete(token);
         return Response.success("更新用户密码成功");
     }
 }

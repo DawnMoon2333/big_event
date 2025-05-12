@@ -10,8 +10,10 @@ import java.util.Map;
 @Component
 public class JWTUtil {
 
-    private final String secret; // 使用 final 确保 secret 不会被意外修改
+    @Value("${jwt.expirationTime}")
+    Integer expirationTime;
 
+    private final String secret; // 使用 final 确保 secret 不会被意外修改
     public JWTUtil(@Value("${password.secret}") String secret) {
         this.secret = secret;
     }
@@ -23,7 +25,7 @@ public class JWTUtil {
         //claims.put("username", "zhangsan");
         return JWT.create()
                 .withClaim("user", claims)
-                .withExpiresAt(new Date(System.currentTimeMillis() + 1000 * 60 * 60 * 3))
+                .withExpiresAt(new Date(System.currentTimeMillis() + expirationTime*60*1000L))
                 .sign(Algorithm.HMAC256(secret));
     }
 
